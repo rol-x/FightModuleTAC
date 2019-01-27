@@ -1,0 +1,40 @@
+﻿  FightModuleTAC.cpp
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\fightmoduletac.cpp(7): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  game.cpp
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(135): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(140): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(146): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(146): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(155): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(160): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(160): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(165): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(167): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(167): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(177): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(186): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(191): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(209): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(217): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(241): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(246): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(252): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(252): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(261): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(266): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(266): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(275): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(275): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(289): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(294): warning C4018: '>=': signed/unsigned mismatch
+  player.cpp
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\player.cpp(97): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\player.cpp(98): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\player.cpp(191): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\player.cpp(196): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\player.cpp(312): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\player.cpp(323): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\player.cpp(373): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\player.cpp(376): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+  FightModuleTAC.vcxproj -> C:\Users\charles0\Documents\Makrokierunek\FoCP\FightModuleTAC\Debug\FightModuleTAC.exe
