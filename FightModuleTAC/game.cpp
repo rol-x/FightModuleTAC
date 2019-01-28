@@ -36,6 +36,12 @@ void cls()					//ready-made function from stackoverflow in replacement of system
 	SetConsoleCursorPosition(handleOut, topLeft);
 }
 
+void moveCursor(int x, int y)
+{
+	COORD p = { x, y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), p);
+}
+
 void ReverseString(string &text)
 {
 	string outputString = "";
@@ -81,7 +87,7 @@ string ToString(int number)
 		bool loop = false;
 
 		cls();
-		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\tY  O  U     D  I  E  D " << endl;
+		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t    Y  O  U     D  I  E  D " << endl;
 		alive = false;
 		do
 		{
@@ -95,6 +101,26 @@ string ToString(int number)
 					loop = true;
 			}
 		} while (loop);
+	}
+
+	void Game::ShowHelp()
+	{
+		cls();
+		textColor.Write("The Amulets of Camembert - Fight Module\n\nItems\n", "info", "neutral");
+		cout << "Each item belongs to one of three categories: Armor, Weapon or Consumable. Weapon items boost your strength, armor corresponds to defense ";
+		cout << "while consumables are one-time-use items to grant\nyou some recovery effects (healing) or permanent boosts. Items can be found in the remains of ";
+		cout << "defeated monsters and can be stored either in Backpack (10 slots) or Equipment (6 slots).\nWhile one can posses many copies of the same item in Backpack, ";
+		cout << "only one can be Equipped, whichmeans its effects will be granted to the Player.\n\n";
+		textColor.Write("The Encounter\n", "info", "neutral");
+		cout << "Player can meet different foes on his way, each with stats and belongings randomized\naccordingly to its level. Out of three options, the Player can Attack, ";
+		cout << "exchanging hits with\nhis enemy (the Player goes first); manipulate their Inventory (at the cost of a lost turn) andtry to Run away, with probability tending to ";
+		cout << "50% as the monster is more damaged.\n\n";
+		textColor.Write("Effects", "info", "neutral");
+		cout << "\nSome items are enchated with spells empowering their effects on the Player. Those Effects can be corelated to: Health, Strength, Defense, Gold and XP. Work with ";
+		cout << "the best possible\ncombination of items in you Equipment to make it as far as possible in this satire-ridden\njourney through academic life.";
+		cout << endl << endl;
+		textColor.SetColor("sub");
+		system("pause"); 
 	}
 
 	void Game::ShowPlayerStats(Player & player)
@@ -314,7 +340,7 @@ string ToString(int number)
 		double runTry;
 		char choice;
 		writer.Write("You encountered " + monster.GetName() + "!");
-		cout << "\t\t\t\t\t\t";
+		moveCursor(84, 4);
 		textColor.Write("[H] Help", "sub", "fight");
 		writer.Write("\nIt looks like it has " + ToString(monster.GetMaxHealth()) + " health and " + ToString(monster.GetStrength()) + " strength!\n\n");
 		do
@@ -324,7 +350,8 @@ string ToString(int number)
 			{
 				ShowPlayerStats(player);
 				textColor.SetColor("fight");
-				cout << "You encountered " << monster.GetName() << "!\t\t\t\t\t\t";
+				cout << "You encountered " << monster.GetName() << "!";
+				moveCursor(84, 4);
 				textColor.Write("[H] Help", "sub", "fight");
 				cout << "\nIt looks like it has " + ToString(monster.GetMaxHealth()) + " health and " + ToString(monster.GetStrength()) + " strength!\n\n";
 			}
@@ -348,6 +375,8 @@ string ToString(int number)
 				ShowInventoryMenu(player);
 				textColor.SetColor("fight");
 				cout << "You encountered " << monster.GetName() << "!";
+				moveCursor(84, 4);
+				textColor.Write("[H] Help", "sub", "fight");
 				cout << "\nIt looks like it has " + ToString(monster.GetMaxHealth()) + " health and " + ToString(monster.GetStrength()) + " strength!\n\n";
 				ShowMonsterStats(monster);
 				textColor.SetColor("neutral");
@@ -376,6 +405,11 @@ string ToString(int number)
 					Attack(player, monster, false);
 				}
 				break;
+			case 'H':
+			case 'h':
+				ShowHelp();
+				doPause = false;
+				break;
 			default:
 				_getch();
 				doPause = false;
@@ -398,7 +432,8 @@ string ToString(int number)
 				{
 					cls();
 					ShowPlayerStats(player);
-					cout << "You encountered " << monster.GetName() << "!\t\t\t\t\t\t";
+					cout << "You encountered " << monster.GetName() << "!";
+					moveCursor(84, 4);
 					textColor.Write("[H] Help", "sub", "sub");
 					cout << "\nIt looks like it has " + ToString(monster.GetMaxHealth()) + " health and " + ToString(monster.GetStrength()) + " strength!\n\n";
 					textColor.SetColor("consumable");

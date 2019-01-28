@@ -7,19 +7,25 @@ int main()
 	srand(time(0));
 	TextColorMap textColor;
 
+	HWND console = GetConsoleWindow();
+	RECT r;
+	GetWindowRect(console, &r);
+	MoveWindow(console, r.left, r.top, 710, 420, TRUE); // 800 width, 100 height
+
+
 #pragma region effectsDeclaration
 
 	vector<Effect> effects;
 
-	Effect restoreHPweak(HealthEffect, 5);
-	Effect restoreHPmoderate(HealthEffect, 10);
-	Effect restoreHPpotent(HealthEffect, 15);
-	Effect buffDefenseWeak(DefenseEffect, 5);
-	Effect buffDefenseModerate(DefenseEffect, 10);
-	Effect buffDefensePotent(DefenseEffect, 15);
-	Effect buffStrengthWeak(StrengthEffect, 5);
-	Effect buffStrengthModerate(StrengthEffect, 10);
-	Effect buffStrengthPotent(StrengthEffect, 15);
+	Effect restoreHPweak(HealthEffect, 3);
+	Effect restoreHPmoderate(HealthEffect, 6);
+	Effect restoreHPpotent(HealthEffect, 10);
+	Effect buffDefenseWeak(DefenseEffect, 3);
+	Effect buffDefenseModerate(DefenseEffect, 6);
+	Effect buffDefensePotent(DefenseEffect, 10);
+	Effect buffStrengthWeak(StrengthEffect, 3);
+	Effect buffStrengthModerate(StrengthEffect, 6);
+	Effect buffStrengthPotent(StrengthEffect, 10);
 	Effect buffXPweak(XPEffect, 1.1);
 	Effect buffXPmoderate(XPEffect, 1.2);
 	Effect buffXPpotent(XPEffect, 1.3);
@@ -61,18 +67,20 @@ int main()
 	Item leggins(ArmorItem, "Pair of leggins", 16, 8, 0);
 	Item calculus(ArmorItem, "Signature of calculus lecturer", 50, 14, 0);
 	Item furCoat(ArmorItem, "Fur coat", 30, 12, 0);
-	Item coffeeSmall(ConsumableItem, "Small coffee cup", 6, 5, 0);
-	Item coffeeLarge(ConsumableItem, "Large coffee cup", 10, 15, 1);
-	Item ciabatta(ConsumableItem, "Ciabatta sandwich", 12, 15, 0);
-	Item cig(ConsumableItem, "Cigarette", 15, 10, 2);
-	Item twoCigs(ConsumableItem, "Two cigarettes", 25, 10, 5);
-	Item cheatSheet(ConsumableItem, "Cheat sheet", 10, 15, 0);
-	Item donutSmall(ConsumableItem, "Small donut", 14, 10, 0);
-	Item donutLarge(ConsumableItem, "Large donut", 20, 15, 0);
+	Item coffeeSmall(ConsumableItem, "Small coffee cup", 6, 3, 0);
+	Item coffeeLarge(ConsumableItem, "Large coffee cup", 10, 9, 1);
+	Item ciabatta(ConsumableItem, "Ciabatta sandwich", 12, 9, 0);
+	Item cig(ConsumableItem, "Cigarette", 15, 6, 2);
+	Item twoCigs(ConsumableItem, "Two cigarettes", 25, 6, 5);
+	Item cheatSheet(ConsumableItem, "Cheat sheet", 10, 10, 0);
+	Item donutSmall(ConsumableItem, "Small donut", 14, 6, 0);
+	Item donutLarge(ConsumableItem, "Large donut", 20, 10, 0);
 	Item water(ConsumableItem, "Cup of water", 0, 0, 0);
-	Item blackHole(ConsumableItem, "Really tiny black hole", 0, 25, 0);
-	Item rustyCoin(ConsumableItem, "Rusty coin", 100, 30, 0);
-	Item chewingGum(ConsumableItem, "Used chewing gum", 5, 15, 0);
+	Item blackHole(ConsumableItem, "Really tiny black hole", 0, 15, 0);
+	Item rustyCoin(ConsumableItem, "Rusty coin", 100, 20, 0);
+	Item chewingGum(ConsumableItem, "Used chewing gum", 5, 9, 0);
+	Item ninjaScroll(ConsumableItem, "Ninja scroll", 50, 10, 0);
+	Item zenDVDtutorial(ConsumableItem, "'Zen buddhism' DVD tutorial", 40, 10, 0);
 
 	coffeeSmall.AddEffect(restoreHPweak);								//definition of Consumables' Effects
 	coffeeLarge.AddEffect(restoreHPmoderate);
@@ -93,6 +101,8 @@ int main()
 	rustyCoin.AddEffect(buffXPpotent);
 	chewingGum.AddEffect(buffStrengthModerate);
 	chewingGum.AddEffect(buffDefenseWeak);
+	ninjaScroll.AddEffect(buffStrengthPotent);
+	zenDVDtutorial.AddEffect(buffDefensePotent);
 
 	items.push_back(twoCigs);
 	items.push_back(skates);
@@ -117,6 +127,8 @@ int main()
 	items.push_back(capacitor);
 	items.push_back(NOT);
 	items.push_back(water);
+	items.push_back(ninjaScroll);
+	items.push_back(zenDVDtutorial);
 
 #pragma endregion	
 #pragma region monsterDeclaration

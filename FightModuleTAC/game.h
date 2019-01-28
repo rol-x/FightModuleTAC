@@ -14,6 +14,8 @@ public:
 
 	void PlayerDead();
 
+	void ShowHelp();
+
 	void ShowPlayerStats(Player & player);
 
 	void ShowMonsterStats(Monster & monster);
