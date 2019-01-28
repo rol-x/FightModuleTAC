@@ -15,15 +15,15 @@ c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\gam
 c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(217): warning C4018: '>=': signed/unsigned mismatch
 c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(235): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(243): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(267): warning C4018: '<': signed/unsigned mismatch
-c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(272): warning C4018: '<': signed/unsigned mismatch
-c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(278): warning C4018: '>=': signed/unsigned mismatch
-c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(278): warning C4018: '<': signed/unsigned mismatch
-c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(287): warning C4018: '<': signed/unsigned mismatch
-c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(292): warning C4018: '>=': signed/unsigned mismatch
-c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(292): warning C4018: '<': signed/unsigned mismatch
-c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(301): warning C4018: '>=': signed/unsigned mismatch
-c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(301): warning C4018: '<': signed/unsigned mismatch
-c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(315): warning C4018: '<': signed/unsigned mismatch
-c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(320): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(271): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(276): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(282): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(282): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(291): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(296): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(296): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(305): warning C4018: '>=': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(305): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(319): warning C4018: '<': signed/unsigned mismatch
+c:\users\charles0\documents\makrokierunek\focp\fightmoduletac\fightmoduletac\game.cpp(324): warning C4018: '>=': signed/unsigned mismatch
   FightModuleTAC.vcxproj -> C:\Users\charles0\Documents\Makrokierunek\FoCP\FightModuleTAC\Debug\FightModuleTAC.exe

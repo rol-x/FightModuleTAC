@@ -3,7 +3,7 @@
 
 
 void Player::UpdateLevel()					//lvl 1->2: 3xp, lvl 2->3: 6xp, lvl 3->4: 10xp, lvl 4->5: 15xp
-{											//xp(lvl) = lvl(lvl+1)/2
+{											//xp(lvl) = lvl(lvl+1)/2, totalXP(lvl) = lvl(lvl+1)(lvl+2)/6
 	int requiredXP = 1, currentXP = xp;
 	int increment = 2;
 	level = 0;
@@ -18,46 +18,46 @@ void Player::UpdateLevel()					//lvl 1->2: 3xp, lvl 2->3: 6xp, lvl 3->4: 10xp, l
 	}
 }
 
-void Player::UpdateStrength()
+int Player::ReturnBaseStrength()
 {
-	strength = 2 + 3 * level;
+	int baseStrength = 2 + 3 * level;
 	for (Item &item : equipment)
 	{
 		if (!item.IsActive())
 			continue;
 		if (item.GetType() == WeaponItem)
 		{
-			strength += item.GetPower();
+			baseStrength += item.GetPower();
 		}
 	}
-	strength += bonusEffectStrength;
+	baseStrength += bonusEffectStrength;
+	return baseStrength;
 }
 
-void Player::UpdateDefense()
+int Player::ReturnBaseDefense()
 {
-	defense = 2 * level;
+	int baseDefense = 2 * level;
 	for (Item &item : equipment)
 	{
 		if (!item.IsActive())
 			continue;
 		if (item.GetType() == ArmorItem)
 		{
-			defense += item.GetPower();
+			baseDefense += item.GetPower();
 		}
 	}
-	defense += bonusEffectDefense;
+	baseDefense += bonusEffectDefense;
+	return baseDefense;
 }
 
 void Player::UpdateEffects()
 {
 	bonusItemDefense = 0;
-	bonusItemHealth = 0;
-	bonusItemStamina = 0;
 	bonusItemStrength = 0;
-	bonusXPBuff = 1;
-	bonusGoldBuff = 1;
+	bonusItemMaxHealth = 0;
+	bonusItemMaxStamina = 0;
 
-	for (Item &item : equipment)
+	for (Item & item : equipment)
 	{
 		if (!item.IsActive())
 			continue;
@@ -65,48 +65,50 @@ void Player::UpdateEffects()
 		{
 			if (item.GetType() == ConsumableItem)
 				continue; 
-			for (Effect &effect : item.GetEffects())
+			for (Effect & effect : item.GetEffects())
 			{
-				switch (effect.GetType())
+				if (!effect.IsUsed())
 				{
-				case HealthEffect:
-					bonusItemHealth += effect.GetPower();
-					break;
-				case StaminaEffect:
-					bonusItemStamina += effect.GetPower();
-					break;
-				case StrengthEffect:
-					bonusItemStrength += effect.GetPower();
-					break;
-				case DefenseEffect:
-					bonusItemDefense += effect.GetPower();
-					break;
-				case GoldEffect:
-					bonusGoldBuff *= effect.GetPower();
-					break;
-				case XPEffect:
-					bonusXPBuff *= effect.GetPower();
-					break;
-				default:
-					break;
+					switch (effect.GetType())
+					{
+					case HealthEffect:
+						bonusItemMaxHealth += effect.GetPower();
+						break;
+					case StaminaEffect:
+						bonusItemMaxStamina += effect.GetPower();
+						break;
+					case StrengthEffect:
+						bonusItemStrength += effect.GetPower();
+						effect.Use();
+						break;
+					case DefenseEffect:
+						bonusItemDefense += effect.GetPower();
+						effect.Use();
+						break;
+					case GoldEffect:
+						goldBuff *= effect.GetPower();
+						effect.Use();
+						break;
+					case XPEffect:
+						XPBuff *= effect.GetPower();
+						effect.Use();
+						break;
+					default:
+						break;
+					}
 				}
 			}
 		}
 	}
 
-	health += bonusItemHealth;
-	stamina += bonusItemStamina;
-	strength += bonusItemStrength;
-	defense += bonusItemDefense;
-	goldBuff *= bonusGoldBuff;
-	XPBuff *= bonusXPBuff;
+	strength = bonusItemStrength + ReturnBaseStrength();
+	defense = bonusItemDefense + ReturnBaseDefense();
+	maxHealth = 30 + level * 5 + bonusItemMaxHealth;
+	maxStamina = 20 + level * 5 + bonusItemMaxStamina;
 }
 
 void Player::UpdateStats(bool init)
-{
-	maxHealth = 30 + level * 5;
-	maxStamina = 20 + level * 5;
-	
+{	
 	if (init)
 	{
 		bonusEffectDefense = 0;
@@ -118,8 +120,6 @@ void Player::UpdateStats(bool init)
 	}
 
 	UpdateLevel();
-	UpdateStrength();
-	UpdateDefense();
 	UpdateEffects();
 }
 
@@ -160,12 +160,14 @@ int Player::GetGold()
 
 int Player::GetCurrentLevelXP()
 {
-	int requiredXP = 5, currentXP = xp;
+	int requiredXP = 1, currentXP = xp;
+	int increment = 2;
 
 	while (currentXP >= requiredXP)
 	{
 		currentXP -= requiredXP;
-		requiredXP++;
+		requiredXP += increment;
+		increment++;
 	}
 	return currentXP;
 }

@@ -64,6 +64,8 @@ bool Item::IsActive()
 void Item::Equip()
 {
 	isActive = true;
+	for (Effect & effect : effects)
+		effect.Reset();
 }
 
 void Item::Unequip()

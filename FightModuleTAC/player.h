@@ -8,7 +8,7 @@ class Player
 	int maxHealth, maxStamina;
 	double strength, defense;
 	double bonusEffectStrength, bonusEffectDefense;
-	double bonusItemStrength, bonusItemDefense, bonusItemHealth, bonusItemStamina, bonusGoldBuff, bonusXPBuff;
+	double bonusItemStrength, bonusItemDefense, bonusItemMaxHealth, bonusItemMaxStamina;
 
 	double goldBuff, XPBuff;
 
@@ -19,9 +19,9 @@ class Player
 
 	void UpdateLevel();
 
-	void UpdateStrength();
+	int ReturnBaseStrength();
 
-	void UpdateDefense();
+	int ReturnBaseDefense();
 
 	void UpdateEffects();
 

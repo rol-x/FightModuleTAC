@@ -18,6 +18,8 @@ class Effect
 	EffectType type;
 	double power;
 
+	bool isUsed;
+
 public:
 
 	Effect(EffectType _type, double _power);
@@ -27,4 +29,10 @@ public:
 	double GetPower();
 
 	void ShowEffect();
+
+	void Reset();
+
+	void Use();
+
+	bool IsUsed();
 };

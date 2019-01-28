@@ -87,7 +87,7 @@ string ToString(int number)
 		bool loop = false;
 
 		cls();
-		cout << "\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t    Y  O  U     D  I  E  D " << endl;
+		cout << "\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t    Y  O  U     D  I  E  D " << endl;
 		alive = false;
 		do
 		{
@@ -116,8 +116,8 @@ string ToString(int number)
 		cout << "exchanging hits with\nhis enemy (the Player goes first); manipulate their Inventory (at the cost of a lost turn) andtry to Run away, with probability tending to ";
 		cout << "50% as the monster is more damaged.\n\n";
 		textColor.Write("Effects", "info", "neutral");
-		cout << "\nSome items are enchated with spells empowering their effects on the Player. Those Effects can be corelated to: Health, Strength, Defense, Gold and XP. Work with ";
-		cout << "the best possible\ncombination of items in you Equipment to make it as far as possible in this satire-ridden\njourney through academic life.";
+		cout << "\nSome items are enchanted with spells empowering their effects on the Player. Those Effects can be corelated to: Health, Strength, Defense, Gold and XP. Work with ";
+		cout << "the best possible\ncombination of items in your Equipment to make it as far as possible in this satire-ridden\njourney through academic life.";
 		cout << endl << endl;
 		textColor.SetColor("sub");
 		system("pause"); 
@@ -128,7 +128,7 @@ string ToString(int number)
 		textColor.SetColor("info");
 		cout << player.GetName() << "\t\tHealth: " << player.health << "/" << player.GetMaxHealth() << " \tStrength: " << player.GetStrength() << "\tDefense: " << player.GetDefense() << " (" << static_cast<int>(2000*sqrtf((float)(player.GetDefense()))/3 - 500)/100.0 << "% reduction)" << endl;
 		textColor.SetColor("sub");
-		cout << "Level: " << player.GetLevel() << "\tXP: " << player.GetCurrentLevelXP() << " (" << player.GetLevel()*(player.GetLevel()+1)/2 << ")\tGold: " << player.GetGold() << endl;
+		cout << "Level: " << player.GetLevel() << "\tXP: " << player.GetCurrentLevelXP() << "/" << (player.GetLevel()+1)*(player.GetLevel()+2)/2 << " (" << player.GetLevel()*(player.GetLevel()+1)*(player.GetLevel()+2)/6 + player.GetCurrentLevelXP() - 1 << ")\tGold: " << player.GetGold() << endl;
 		cout << "---------------------------------------------------------------------------------------------" << endl << endl;
 	}
 
@@ -237,7 +237,7 @@ string ToString(int number)
 			writer.Write(player.GetName() + " attacked " + monster.GetName() + " for " + ToString(damage) + " dmg!\n");
 			monster.health -= damage;
 		}
-		else if(monster.health >= 0)
+		else if(monster.health > 0)
 		{
 			double armorRatio = (1.05 - sqrtf((float)(player.GetDefense())) / 15.0);
 			int damage = monster.GetStrength() * max(armorRatio, 0.3);
@@ -286,8 +286,8 @@ string ToString(int number)
 			case 'r':
 				if (selection >= 0 && selection < monster.GetLoot().size())
 				{
-					player.AddToBackpack(monster.GetLoot()[selection]);
-					monster.DropItem(selection);
+					if(player.AddToBackpack(monster.GetLoot()[selection]))
+						monster.DropItem(selection);
 				}
 				else if (selection >= monster.GetLoot().size() && selection < (monster.GetLoot().size() + player.GetBackpack().size()))
 				{

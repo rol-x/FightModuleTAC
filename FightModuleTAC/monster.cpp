@@ -19,7 +19,9 @@ Monster::Monster(string _name, int _level)
 	stamina = maxStamina;
 
 	goldReward = (int)((double)((double)(maxHealth) * 0.2) + (double)((double)(maxStamina) * 0.3) + (double)((double)(defense) * 0.4) + strength + level);
-	XPReward = 2*level;
+	XPReward = level;
+	if (!(rand() % 10))
+		XPReward *= 2;
 }
 
 int Monster::GetMaxHealth()

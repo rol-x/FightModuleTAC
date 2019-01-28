@@ -5,6 +5,7 @@ Effect::Effect(EffectType _type, double _power)
 {
 	type = _type;
 	power = _power;
+	Reset();
 }
 
 EffectType Effect::GetType()
@@ -41,4 +42,19 @@ void Effect::ShowEffect()
 		break;
 	}
 	cout << " buff: " << power;
+}
+
+void Effect::Use()
+{
+	isUsed = true;
+}
+
+void Effect::Reset()
+{
+	isUsed = false;
+}
+
+bool Effect::IsUsed()
+{
+	return isUsed;
 }
