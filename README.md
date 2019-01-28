@@ -11,3 +11,11 @@ Player is presented with a foe, which has some HP, strength, defense and loot. A
 Classes used:
 *Monster, Player, Item, Effect, Game, Color, EpicWriter and TextColorMap*.
 Each is responsible for a single element of the gameplay and while some of them are subcategorized (e.g. with ItemType enumerator), it's clear what purpose does each one of them serve.
+
+# Cloning the repository
+To test the gameplay, simply clone the repository into your local repository: 
+
+<pre class="command-line"><span class="command">git clone https://github.com/rol-x/FightModuleTAC.git</span>
+</pre>
+
+`Written in C++ by Charles John Summers, using Visual Studio Community 2017.`
