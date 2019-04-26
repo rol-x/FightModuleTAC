@@ -18,4 +18,4 @@ To test the gameplay, simply clone the repository into your local repository:
 <pre class="command-line"><span class="command">git clone https://github.com/rol-x/FightModuleTAC.git</span>
 </pre>
 
-`Written in C++ by Charles John Summers, using Visual Studio Community 2017.`
+`Written in C++ by Charles John Summers 2018`
